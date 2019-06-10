@@ -30,6 +30,7 @@ class ArticleReport extends Command
     /**
      * Create a new command instance.
      *
+     * @param $articleReportRepository
      * @return void
      */
     public function __construct(ArticleReportInterface $articleReportRepository)
@@ -46,14 +47,7 @@ class ArticleReport extends Command
      */
     public function handle()
     {
-        //
-    Log::info('test cc',['xxx'=>$this->argument('fromDate')]);
-
-    //do ur complex logic here and return a resposne
-    $this->articleReportRepository->showArticleReport($this->argument('fromDate'),$this->argument('endDate'));
-
-
-
+       $this->articleReportRepository->showArticleReport($this->argument('fromDate'),$this->argument('endDate'));
 
     }
 }
